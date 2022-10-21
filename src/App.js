@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Todolist } from './component/Todolist';
+import {Detail} from './component/Detail';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/dsaApp.js</code> and savedsadsadsadas to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reactdasdsadsadsadsaß
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Todolist/>}></Route>
+        <Route path='/Detail/:id' element={<Detail/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
